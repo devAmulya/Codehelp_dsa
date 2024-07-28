@@ -48,7 +48,7 @@ int main(){
     /*Total number of occurence
     cout<<"Total occurence : "<<ans1-ans+1;*/
     
-    /Mountain array peak index
+    //Mountain array peak index
     int ans = -1;
     int start = 0;
     int end = n-1;
