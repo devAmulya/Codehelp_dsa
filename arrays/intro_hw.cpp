@@ -99,11 +99,42 @@ int pair_sum(int arr[], int n,int t, int a, int idx){
 int main(){
     
     //int arr[] = {-3,0,1,-3,1,1,1,-3,10,0};
-    int arr[] = {10,5,5,5,2};
+    int arr[] = {4,3,2,7,8,2,3,1};
+    //int arr[] = {10,5,5,5,2};
+    
+    //sort(arr,arr+n);
+    //int arr[] = {0,1,2,0,2,2,1,0};
     int n = sizeof(arr)/sizeof(arr[0]);
-    sort(arr,arr+n);
+
     /*Unique number of occurence
     unique_occurence(arr,n);*/
+
+    //Duplicates 
+    /*1st o(n) space 
+    long long int N = 100000;
+    int idx[N];
+    for(int i = 0; i  < N; i++){
+        idx[i] = -1;
+    }
+    for(int i = 0; i < n; i++){
+        if(idx[arr[i]] != -1){
+            cout<<idx[arr[i]]<<" ";
+        }
+        else{
+            idx[arr[i]] = i;
+        }
+    }*/
+    //2nd const space
+    for (int i = 0; i < n; ++i) {
+        while (arr[i] != arr[arr[i] - 1]) {
+            swap(arr[i], arr[arr[i] - 1]);
+        }
+    }
+    for (int i = 0; i < n; ++i) {
+        if (arr[i] != i + 1) {
+            cout<<arr[i]<<" ";
+        }
+    }
 
     /*3 SUM 
     int tg = 12;
@@ -113,8 +144,32 @@ int main(){
         }
         pair_sum(arr,n,tg,arr[i],i);
     }*/
-    
-        
+
+    /*Sort 0 1 2
+    int low = 0;
+    int mid = 0;
+    int high = n-1;
+    while(mid<=high){
+        if(arr[mid] == 0){
+            int temp = arr[mid];
+            arr[mid] = arr[low];
+            arr[low] = temp;
+            low++;
+            mid++;
+        }
+        else if(arr[mid] == 1){
+            mid++;
+        }
+        else if(arr[mid] == 2){
+            int temp = arr[mid];
+            arr[mid] = arr[high];
+            arr[high] = temp;
+            high--;
+        }
+    }
+    for(int i = 0; i < n; i++){
+        cout<<arr[i];
+    }*/
 
 
 }
