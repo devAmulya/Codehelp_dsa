@@ -66,17 +66,57 @@ bool unique_occurence(int arr[], int n){
     }
 }
 
+int pair_sum(int arr[], int n,int t, int a, int idx){
+    int i = idx+1;
+    int j = n-1;
+    int found = -1;
+    while(i<j){
+        if((a+arr[i]+arr[j]) == t){
+            cout<<a<<" "<<arr[i]<<" "<<arr[j];
+            while(i<j && arr[i] == arr[i+1]){
+                i++;
+            }
+            while(i<j&&arr[j]==arr[j-1]){
+                j--;
+            }
+            i++;
+            j--;
+        }
+        else{
+            if(a+arr[i]+arr[j] < t){
+                i++;
+            }
+            else if(a+arr[i]+arr[j] > t){
+                j--;
+            }
+        }
+    }
+    return 0;
+
+}
+
 
 int main(){
     
-    /*Unique number of occurence
-    int arr[] = {-3,0,1,-3,1,1,1,-3,10,0};
+    //int arr[] = {-3,0,1,-3,1,1,1,-3,10,0};
+    int arr[] = {10,5,5,5,2};
     int n = sizeof(arr)/sizeof(arr[0]);
     sort(arr,arr+n);
+    /*Unique number of occurence
     unique_occurence(arr,n);*/
 
+    /*3 SUM 
+    int tg = 12;
+    for(int i = 0; i < n-2;i++){
+        if(i>0 && arr[i] == arr[i-1]){
+            continue;
+        }
+        pair_sum(arr,n,tg,arr[i],i);
+    }*/
     
-    
+        
+
+
 }
 
 
