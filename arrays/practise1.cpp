@@ -24,6 +24,29 @@ void merge_array(int arr1[], int n, int arr2[], int m, int arr3[]){
     }
 }
 
+void merge_array2(int arr1[], int n, int arr2[], int m, int arr3[]){
+    int i = 0, j = 0,k=0;
+    while(i < n && j < m){
+        if(arr1[i] == 0){
+            break;
+        }
+        if(arr1[i]<arr2[j]){
+            arr3[k++] = arr1[i++];
+        }else{
+            arr3[k++] = arr2[j++];
+        }
+    }
+    while(i<n){
+        if(arr1[i] == 0){
+            break;
+        }
+        arr3[k++] = arr1[i++];
+    }
+    while(j<m){
+        arr3[k++] = arr2[j++];
+    }
+}
+
 int main(){
     
     /*Reverse an array after M element
@@ -49,6 +72,18 @@ int main(){
     int arr3[n+m];
     merge_array(arr1, n, arr2, m, arr3);
     print(arr3,n+m);*/
+
+    /*For merging the same in the first;
+    int arr1[] = {1,2,3,0,0,0};
+    int arr2[] = {2,5,6};
+    int n = sizeof(arr1)/sizeof(arr1[0]);
+    int m = sizeof(arr2)/sizeof(arr2[0]);
+    int arr3[n];
+    merge_array2(arr1, n, arr2, m, arr3);
+    for(int i = 0; i<n; i++){
+        arr1[i] = arr3[i];
+    }
+    print(arr1,n);*/
 
     //move zeroes
     int arr[] = {0,1,0,3,12,0};
