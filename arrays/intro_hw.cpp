@@ -124,7 +124,7 @@ int main(){
             idx[arr[i]] = i;
         }
     }*/
-    //2nd const space
+    //2nd const space(dutch national flag algorithm)
     for (int i = 0; i < n; ++i) {
         while (arr[i] != arr[arr[i] - 1]) {
             swap(arr[i], arr[arr[i] - 1]);
