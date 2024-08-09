@@ -124,7 +124,22 @@ int main(){
             idx[arr[i]] = i;
         }
     }*/
-    //2nd const space(dutch national flag algorithm)
+
+    //const space[n-1] tk ke lia sol
+    //int arr[] = {2,3,1,2,3};
+    /*int n = 5;
+    for(int i = 0; i < n; i++){
+        int index = arr[i]%n;
+        arr[index] += n;
+    }
+    for(int i = 0; i < n; i++){
+        if(arr[i]/n >= 2){
+            cout<<i;
+        }
+    }
+    cout<<endl<<endl;*/
+
+    //2nd const 
     for (int i = 0; i < n; ++i) {
         while (arr[i] != arr[arr[i] - 1]) {
             swap(arr[i], arr[arr[i] - 1]);
@@ -145,7 +160,7 @@ int main(){
         pair_sum(arr,n,tg,arr[i],i);
     }*/
 
-    /*Sort 0 1 2
+    /*Sort 0 1 2 (dutch national flag algorithm)
     int low = 0;
     int mid = 0;
     int high = n-1;
