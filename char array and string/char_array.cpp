@@ -5,7 +5,7 @@ using namespace std;
 char toLowerCase(char ch){
     if(ch >= 'a' && ch <= 'z'){
         return ch;
-    }else{
+    }else if(ch >= 'A' && ch<='Z'){
         return ch+32;// 'a' - 'A' = 32
     }
 }
@@ -29,6 +29,12 @@ bool check_palindrome(char word[]){
     int n = getLength(word);
     int s = 0, e = n-1;
     while(s<e){
+        while(s < e && !((word[s] >= 'a' && word[s] <= 'z') || (word[s] >= '0' && word[s] <= '9'))){
+            s++;
+        }
+        while(s < e && !((word[e] >= 'a' && word[e] <= 'z') || (word[e] >= '0' && word[e] <= '9'))){
+            e--;
+        }
         if(word[s] != word[e]){
             return false;
         }
@@ -46,7 +52,7 @@ int main(){
 
     char name[20];
     cout<<"Enter your name : ";
-    cin >> name;
+    cin.getline(name,20);
     cout<<"Your name is : "<<name<<endl;
 
     /*Length of string
@@ -58,18 +64,16 @@ int main(){
     cout<<"Reverse : "<<name<<endl;*/
 
     /*Palindrome - if reverse array is same as org
-    //Case sensitive
+    //Case sensitive 
     for(int i = 0; i < getLength(name); i++){
         name[i] = toLowerCase(name[i]);
     }
-    //not case sensitive
-    if(check_palindrome(name)){
+    //not case sensitive 
+    if(check_palindrome(name)){ //include cond to skip other than alpha numeric value
         cout<<name<<" is palindrome";
     }else{
         cout<<name<<" is not palindrome";
     }*/
-
-    
 
 
 
