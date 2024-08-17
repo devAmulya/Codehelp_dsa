@@ -81,12 +81,6 @@ bool checkInclusion(string s1, string s2){
     return 0;
 }
 
-string rd(string s){
-    while(s.length() > 0){
-
-    }
-}
-
 int compress(vector<char>& chars){
     int i = 0;
     int ansIndex = 0;
