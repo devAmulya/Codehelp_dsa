@@ -6,7 +6,7 @@ using namespace std;
 
 string adjdup1(string s){
     bool flag = true;
-    while(true){
+    while(flag){
         int i = 0;
         while(s[i] != s[i+1] && i < s.size()){
             i++;
@@ -18,9 +18,6 @@ string adjdup1(string s){
         if(flag){
             s.erase(i,2);
         }
-        else {
-            break;
-        }
     }
     return s;
 
@@ -30,7 +27,7 @@ string adjdup(string s){
     string s1;
     int i = 0;
     while(i<s.length()){
-        if(s.empty() || s[i] != s1.back()){
+        if(s1.empty() || s[i] != s1.back()){
             s1.push_back(s[i]);
         }else{
             s1.pop_back();
