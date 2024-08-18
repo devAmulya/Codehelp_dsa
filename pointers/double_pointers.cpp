@@ -9,5 +9,6 @@ int main(){
 
     cout<<"printing ptr : "<<ptr<<endl;
     cout<<"addres pf ptr : "<<&ptr<<endl;
+    cout<<*ptr2<<endl;
 
 }
