@@ -48,7 +48,7 @@ int main(){
     delete[] arr;
     */
 
-    //2D array
+    /*2D array
     int n,m;
     cin >> n >> m;
     int ** arr = new int*[n];
@@ -71,6 +71,7 @@ int main(){
         delete[] arr[i];
     }
     delete[] arr;
+    */
 
     return 0;
 }
