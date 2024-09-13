@@ -69,7 +69,7 @@ int main(){
     cout<<"The GCD of "<<a<<" & "<<b<<" is: "<<ans<<endl;
 
     //Fast Exponential
-    cout<<"5 to the power of 5 : "<<modularExponential(5,10,1);
+    cout<<"5 to the power of 10 : "<<modularExponential(5,2,1);
 
 
     return 0;
