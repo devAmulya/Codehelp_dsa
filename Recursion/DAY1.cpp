@@ -58,6 +58,5 @@ int main(){
     int n;
     cin >> n;
     printCount(n);
-    
     return 0;
 }
